@@ -1,11 +1,10 @@
-import {Route, Routes, Link} from 'react-router-dom'
-import Home from '../Pages/Home.jsx'
+import { Link, Route, Routes } from 'react-router-dom';
 import Login from '../Pages/Login.jsx'
 export default function Header(){
   return <>
   <header>
   <nav>
-  <ul>
+  <ul className="flex gap-1">
   <Link to="/">home</Link>
   <Link to="/login">Login</Link>
   </ul>
