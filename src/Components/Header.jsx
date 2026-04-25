@@ -4,7 +4,7 @@ export default function Header(){
   return <>
   <header>
   <nav>
-  <ul className="flex gap-1">
+  <ul className="flex gap-1 p-4 ">
   <Link to="/">home</Link>
   <Link to="/login">Login</Link>
   </ul>
