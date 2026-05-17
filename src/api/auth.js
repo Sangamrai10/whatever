@@ -1,4 +1,4 @@
-import config from "./config/config.js"
+import config from "../config/config.js"
 
 async function register(name, email, password, confirm_password){
   const response =await api.post(`/api/auth/register`,

@@ -1,12 +1,14 @@
 import {useForm} from "react-hook-form"
+import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios"
-
+import {login} from "../api/auth.js"
+import { Link, Route, Routes } from 'react-router-dom';
 
 export default function Login(){
   const {register, handleSubmit, formState:{errors}}=useForm()
   
-  const submit=async (data,e)=>{
-    e.preventDefault()
+  async function submit(data){
+    await login(data)
     console.log(data)
   }
   
@@ -24,7 +26,15 @@ export default function Login(){
   
   <button type="submit" className="mt-4 p-2 bg-gray-300 rounded active:bg-gray-500 ">Login</button>
   </div>
+  <div>
+    <Link to="/register">register</Link>
+  </div>
+  <ToastContainer/>
   </form>
   </div>
+  
+  <Routes>
+    <Route path={"/register"} elememt={<Register/>}/>
+  </Routes>
   </>
 }
