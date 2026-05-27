@@ -15,7 +15,7 @@ export default function Header(){
   
   <Routes>
   <Route path="/" element={<Home/>}/>
-  <Route path="/login" element={<Login/>}/>
+  <Route path="/login/*" element={<Login/>}/>
   </Routes>
   </>
 }

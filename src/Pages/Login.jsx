@@ -1,7 +1,7 @@
 import {useForm} from "react-hook-form"
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios"
-import {login} from "../api/auth.js"
+import {loginUser, registerUser} from "../api/auth.js"
 import { Link, Route, Routes } from 'react-router-dom';
 import Register from "./Register.jsx";
 
@@ -9,7 +9,7 @@ export default function Login(){
   const {register, handleSubmit, formState:{errors}}=useForm()
   
   async function submit(data){
-    await login(data)
+    await registerUser(data)
     console.log(data)
   }
   
@@ -19,7 +19,8 @@ export default function Login(){
   <section className={"bg-black text-white p-4 width-full "}>Login form</section>
   <div className="p-4 flex flex-col">
   <input type="text" id="email" placeholder="Enter Email" className="outline-0 border-b-2 mt-4 p-2" {...register("name",{required:true})}/>
-  {errors.name && <span>This field is required</span>}
+  {errors.email && <span>This field is required</span>}
+
   <input type="password" id="password" placeholder="password" className="outline-0 border-b-2 mt-4 p-2"
   {...register("password",{required:true})}
   />
