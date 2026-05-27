@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import Login from '../Pages/Login.jsx'
+import Home from '../Pages/Home.jsx'
 export default function Header(){
   return <>
   <header>

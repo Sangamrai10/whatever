@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios"
 import {login} from "../api/auth.js"
 import { Link, Route, Routes } from 'react-router-dom';
+import Register from "./Register.jsx";
 
 export default function Login(){
   const {register, handleSubmit, formState:{errors}}=useForm()
@@ -34,7 +35,7 @@ export default function Login(){
   </div>
   
   <Routes>
-    <Route path={"/register"} elememt={<Register/>}/>
+    <Route path={"/register"} element={<Register/>}/>
   </Routes>
   </>
 }
